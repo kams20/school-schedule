@@ -1,0 +1,228 @@
+
+body {
+    font-family: 'Fira Code', monospace;
+    background: #282a36; 
+    color: #f8f8f2;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.school-logo {
+    width: 150px; 
+    margin-bottom: 10px;
+    mix-blend-mode: multiply;
+}
+
+.light-theme .school-logo {
+    background-color: #ffffff; 
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo {
+    width: 80px; 
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #50fa7b; 
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.table-container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #44475a; 
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #6272a4;
+    color: #f8f8f2; 
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #44475a; 
+    font-size: 18px;
+    color: #bd93f9;
+}
+
+th {
+    background-color: #ff5555; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+td {
+    background-color: #44475a;
+}
+
+.vacant {
+    background-color: #ffb86c;
+    color: #282a36;
+    font-weight: bold;
+}
+
+td:hover {
+    background-color: #ff79c6;
+    transition: background-color 0.3s ease;
+}
+
+.highlight {
+    background-color: #50fa7b !important;
+    color: #282a36 !important;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 1200px) {
+    table {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead {
+        display: none;
+    }
+    tr {
+        margin-bottom: 10px;
+        border-bottom: 2px solid #44475a;
+    }
+    td {
+        padding: 10px;
+        font-size: 14px;
+        text-align: left;
+        position: relative;
+    }
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-weight: bold;
+        color: #f8f8f2;
+    }
+}
+
+@media (max-width: 576px) {
+    table {
+        font-size: 12px;
+    }
+    td {
+        padding: 8px;
+    }
+}
+
+
+body.light-theme {
+    background: #ffffff; 
+    color: #333;
+}
+
+body.light-theme h1, body.light-theme h2 {
+    color: #000;
+}
+
+body.light-theme .table-container {
+    background-color: #f9f9f9; 
+}
+
+body.light-theme table {
+    background-color: #ffffff;
+}
+
+body.light-theme th {
+    background-color: #007bff; 
+    color: #ffffff; 
+}
+
+body.light-theme td {
+    background-color: #f1f1f1;
+    color: #333; 
+}
+
+body.light-theme .vacant {
+    background-color: #ffc107; 
+}
